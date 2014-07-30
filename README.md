@@ -18,9 +18,9 @@ To test drive the application, you can checkout the code
 
 ``python manage.py runserver``
 
-Go to browser and go to http://localhost:8000/suess to see the app
+Go to browser and go to ``http://localhost:8000/suess`` to see the app
 
-Go to http://localhost:8000/admin to view the admin panel and see the registered users.
+Go to ``http://localhost:8000/admin`` to view the admin panel and see the registered users.
   
   Username: admin
   
