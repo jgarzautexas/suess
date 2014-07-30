@@ -1,4 +1,7 @@
-import json
+'''
+Views for Dr Suess signup newsletter app
+'''
+
 from django.utils import simplejson
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
@@ -6,17 +9,23 @@ from django.template import RequestContext
 from whomail import forms
 
 def index(request):
-	context={}
-	if request.method=='POST':
+	'''Signup newsletter view used to validate an email address and add to DB.
+
+	'''
+
+	context =  dict()
+
+	if request.method == 'POST':
 		form=forms.SubscriberForm(request.POST)
 		if form.is_valid():
-			print 'i am valid'
 			form.save()
 			context['success'] = True
-			# return HttpResponse(simplejson.dumps({'success':'Y'}))
+
 		else:
 			context['form_errors'] = form.errors
+	else:
 
+	# Always send a new form
 	form=forms.SubscriberForm()
 	context['form']=form
 
