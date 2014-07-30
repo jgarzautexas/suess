@@ -27,5 +27,6 @@ def index(request):
 	context['form'] = forms.SubscriberForm()
 
 	return render_to_response('index.html',
-							   context,
-							   context_instance=RequestContext(request))
+							  context,
+							  context_instance=RequestContext(request)
+	)
